@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Calculator</title>
+    <style>
+        .machine {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .machine input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .machine button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="machine">
+        <h2>Machine Calculator</h2>
+        <input type="text" id="input1" placeholder="Number 1">
+        <input type="text" id="input2" placeholder="Number 2">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <button onclick="calculate()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById("input1").value);
+            var num2 = parseFloat(document.getElementById("input2").value);
+            var operator = document.getElementById("operator").value;
+            var result;
+
+            switch (operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = "Invalid operator";
+            }
+
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    </script>
+    <p><a href="https://www.figma.com/design/OonUsveU0fh9SzCLNXVDZj/Untitled?node-id=0-1&t=lKIZM74VbBWLDk0y-1">Figma</a></p>
+    
+</body>
+</html>
+</html>
